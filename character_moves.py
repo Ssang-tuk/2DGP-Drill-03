@@ -43,7 +43,7 @@ def move_rectangle():
 def move_circle():
     print("Moving circle")
     r = 200
-    for deg in range(0, 360):
+    for deg in range(0, 360, 3):
         x = r * math.cos(math.radians(deg)) + 400
         y = r * math.sin(math.radians(deg)) + 300
         draw_boy(x, y)
@@ -57,14 +57,29 @@ def draw_boy(x: float, y: float):
 
 
 def move_top_triangle():
+    print("Moving top triangle")
+    for x in range(0, 780, 5):
+        draw_boy(x, 550)
     pass
 
 
 def move_down_triangle():
+    print("Moving down triangle")
+    x, y = 780, 550
+    while x > 400 and y > 50:
+        draw_boy(x, y)
+        x -= 4
+        y -= 5
     pass
 
 
 def move_up_triangle():
+    print("Moving up triangle")
+    x, y = 400, 50
+    while x > 0 and y < 550:
+        draw_boy(x, y)
+        x -= 4
+        y += 5
     pass
 
 
@@ -77,10 +92,10 @@ def move_triangle():
 
 
 while True:
-    move_rectangle()
-    move_circle()
     move_triangle()
-    break
-    pass
+    # move_rectangle()
+    # move_circle()
+
+
 
 close_canvas()
