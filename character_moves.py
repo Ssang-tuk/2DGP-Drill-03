@@ -92,8 +92,8 @@ def move_triangle():
 
 
 while True:
-    move_triangle()
     move_rectangle()
+    move_triangle()
     move_circle()
 
 
